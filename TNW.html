@@ -1,35 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .logo {
+            width: 80%;
+            height: 65px;
+        }
+
+
+        li {
+            list-style: none;
+        }
+
+        ul li {
+            padding: 5px 10px 6px 4px;
+        }
+
+        a {
+            outline: none;
+            text-decoration: none;
+            color: #505666;
+        }
+
+        .pointer {
+            cursor: pointer;
+        }
+
+        .header1 {
+            text-align: left;
+            background-color: #fd3;
+            padding: 10px;
+            border: none;
+            box-shadow: 0 15px 45px rgb(0 0 0 / 15%);
+        }
+
+        .header2 {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 2% 0;
+            margin-bottom: 2rem;
+        }
+
+        .wrapper-grid {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-gap: 5px;
+            height: 500px;
+            grid-template-areas: "area1 area1 area2 area3"
+                "area1 area1 area4 area4"
+                "area5 area5 area4 area4";
+        }
+
+        .wrapper-grid>div {
+            border: 2px solid black;
+            background-color: rgb(160 92 92 / 80%);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+
+        }
+
+        .box1 {
+            grid-area: area1;
+            background-color: teal;
+        }
+
+        .box2 {
+            grid-area: area2;
+        }
+
+        .box3 {
+            grid-area: area3;
+        }
+
+        .box4 {
+            grid-area: area4;
+        }
+
+        .box5 {
+            grid-area: area5;
+        }
+
+        .middle-section {
+            margin-top: 3rem;
+            background-color: #f7f8f8;
+        }
+
+        .header3 h2 {
+            text-align: center;
+            color: #a7aab2;
+            font-family: Trump Soft Pro, Arial Narrow, sans-serif;
+            letter-spacing: .01em;
+            font-size: 2rem;
+            font-weight: 500px;
+        }
+
+        .articlesTrend ol {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 1fr;
+            gap: 1.5rem;
+            ;
+            padding: 0 13em;
+            margin: 1.5rem;
+        }
+
+        .index {
+            font-size: 38px;
+            color: #c09;
+        }
+
+        ol li {
+            display: flex;
+            gap: 12px;
+            cursor: pointer;
+        }
+
+        ol li h4 {
+            margin: 0;
+        }
+
+        ol li h4 span:hover {
+            box-shadow: 0 2px 0 rgb(204 0 153 / 33%);
+        }
+
+        .flex-stories ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+        }
+
+        .flex-stories ul li {
+            border: 2px solid teal;
+            width: 280px;
+            height: 150px;
+            margin-top: 3rem;
+            background-color: darksalmon;
+        }
+
+        @media (min-width: 768px) {
+            .header2 {
+
+
+                padding-left: 4rem;
+                padding-right: 4rem;
+            }
+        }
+
+        @media (min-width: 1023px) {
+            .navbar ul {
+                font-family: Shentox, sans-serif;
+                font-size: 14px;
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 1023px) {
+            .navbar ul {
+                font-family: Shentox, sans-serif;
+                display: flex;
+                justify-content: center;
+                overflow: hidden;
+            }
+        }
+
+        .btn {
+            border: 2px solid;
+            border-radius: 1.5rem;
+            color: #505666;
+            background-color: transparent;
+            cursor: pointer;
+            padding: 15px;
+            font-weight: 500;
+            font-size: 13px;
+        }
+
+        .allNewsButton {
+            display: flex;
+            justify-content: center;
+            margin-top: 60px;
+        }
+
+        .channels {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            column-gap: 5px;
+            justify-items: center;
+        }
+        .channels div {
+            border: 2px solid rgb(107, 102, 102);
+            padding: 10px;
+            width: 290px;
+            height: 200px;
+            background-color: rosybrown;
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
     <div class="navbar">
         <ul>
-            <li>HOME</li>
-            <li>NEWS</li>
-            <li>EVENTS</li>
-            <li>PROGRAMS</li>
-            <li>SPACES</li>
-            <li>MORE</li>
+            <li><a class="pointer" href="#">HOME</a></li>
+            <li><a href="#">NEWS</a></li>
+            <li><a href="#">EVENTS</a></li>
+            <li><a class="pointer" href="#">PROGRAMS</a></li>
+            <li><a class="pointer" href="#">SPACES</a></li>
+            <li><a href="#">MORE</a></li>
         </ul>
     </div>
     <header>
-        <div class="header1">TNW</div>
-        <div class="header1"> The heart of tech</div>
+        <div class="header1"><a href="#">Rub shoulders with leading experts and industry disruptors at TNW
+                Conference</a></div>
     </header>
     <main>
-        <div class="wrapper-grid">
-            <div>box1</div>
-            <div>box2</div>
-            <div>box3</div>
-            <div>box4</div>
-            <div>box5</div>
-
+        <div class="header2">
+            <div>
+                <a href="https://thenextweb.com/"><img class="logo" src="/logo-tnw-300x95.png" alt="logo TNW"></a>
+            </div>
+            <div>
+                <h1>The heart of tech</h1>
+            </div>
+        </div>
+        <div>
+            <div class="wrapper-grid">
+                <div class="box1">box1</div>
+                <div class="box2">box2</div>
+                <div class="box3">box3</div>
+                <div class="box4">box4</div>
+                <div class="box5">box5</div>
+            </div>
         </div>
     </main>
+    <section class="middle-section">
+        <div class="header3">
+            <h2>POPULAR ARTICLES TODAY</h2>
+        </div>
+        <div class="articlesTrend">
+            <ol>
+                <li>
+                    <span class="index">1</span>
+                    <h4><span>Object-oriented programming is dead. Wait, really?</span></h4>
+                </li>
+                <li>
+                    <span class="index">2</span>
+                    <h4><span>In scientific first, brain implant turns paralyzed man’s thoughts into ‘speech’</span>
+                    </h4>
+                </li>
+                <li>
+                    <span class="index">3</span>
+                    <h4><span>Lying, corrupt, anti-American cops are running amok with AI</span></h4>
+                </li>
+                <li>
+                    <span class="index">4</span>
+                    <h4><span>What is entanglement in quantum physics? We’ll explain in under 5 minutes</span></h4>
+                </li>
+                <li>
+                    <span class="index">5</span>
+                    <h4><span>What size iPad Pro should you buy?</span></h4>
+                </li>
+            </ol>
+
+        </div>
+
+    </section>
+    <section class="section3">
+        <div>
+            <h2>Latest stories</h2>
+        </div>
+        <div class="flex-stories">
+            <ul>
+                <li>
+                    <h4>Twitter is giving online shopping another go</h4>
+                </li>
+                <li>
+                    <h4>Immortality or spaghetti? Why parking your spaceship inside a black hole is a huge gamble</h4>
+                </li>
+                <li>
+                    <h4>Harvard scientists are using AI to search for alien technology</h4>
+                </li>
+                <li>
+                    <h4>Beware, Musk and Bezos — Porsche is joining the space race</h4>
+                </li>
+                <li>
+                    <h4>This jigsaw puzzle could earn you $1 million. No, seriously…it could</h4>
+                </li>
+                <li>
+                    <h4>This Air Pix drone fits in your pocket just for taking cool aerial selfies</h4>
+                </li>
+                <li>
+                    <h4>Stop spending cash on giving workers skills that’ll be useless in a decade</h4>
+                </li>
+                <li>
+                    <h4>Data scientists continue to be the sexiest hires around</h4>
+                </li>
+            </ul>
+
+        </div>
+        <div class="allNewsButton">
+            <a class="btn" href="https://thenextweb.com/latest">ALL NEWS</a>
+        </div>
+    </section>
+    <section class="section4">
+        <div class="headerChannels">
+            <h2>Explore our channels</h2>
+        </div>
+        <div class="channels">
+            <div>Plugged</div>
+            <div>Neural</div>
+            <div>Shift</div>
+            <div>Growth Quarters</div>
+            <div>Hard fork</div>
+
+        </div>
+    </section>
 </body>
+
 </html>
